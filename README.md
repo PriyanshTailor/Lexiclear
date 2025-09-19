@@ -1,157 +1,131 @@
-# NyaySaar - AI Legal Guide
+# ⚖️ LexiClear
 
-A comprehensive AI-powered platform that makes legal documents easy to understand through intelligent analysis, risk detection, and multilingual support.
+> **AI-Powered Legal Document Assistant**  
+> Upload contracts or legal docs → get plain-language summaries, risk flags, clause comparisons, and conversational Q&A.
 
-## Features
+---
 
-### 🔍 Document Analysis
-- **OCR Processing**: Upload PDFs, Word documents, or scanned images
-- **AI Summarization**: Get plain language summaries of complex legal documents
-- **Risk Detection**: Automatically identify and categorize risky clauses
-- **Interactive Highlights**: Click on highlighted text for detailed explanations
+## ✨ Features
 
-### 💬 Conversational Q&A
-- **AI Chat Interface**: Ask questions about your documents in natural language
-- **Contextual Responses**: Get answers based on your specific document content
-- **Sample Questions**: Pre-built questions to help you get started
+- 📄 **Document Upload** — Supports PDF, text, and image-based files
+- 📝 **Plain-Language Summaries** — Understand complex legal terms instantly
+- ⚠️ **Risky Clause Detection** — Highlight suspicious clauses
+- 💬 **AI Q&A Chat** — Ask document-related questions conversationally
+- 📑 **Document Comparison** — Compare clauses side-by-side
+- 🌐 **Language Toggle** — Switch between English ↔ Hindi
+- ⚡ **Mock AI Logic Included** — Easily replace with your own AI backend
 
-### 📊 Document Comparison
-- **Side-by-Side Analysis**: Compare multiple documents across key categories
-- **Risk Comparison**: Visual comparison of risk levels between documents
-- **Smart Recommendations**: AI-powered suggestions on which document is better
+---
 
-### 🌐 Multilingual Support
-- **English & Hindi**: Full interface and responses in both languages
-- **Language Toggle**: Switch between languages seamlessly
-- **Localized Content**: All text properly translated and culturally appropriate
+## 🧠 Tech Stack
 
-## Tech Stack
+- **Framework:** :contentReference[oaicite:1]{index=1} (App Router) + :contentReference[oaicite:2]{index=2}  
+- **Styling:** :contentReference[oaicite:3]{index=3} + :contentReference[oaicite:4]{index=4} primitives  
+- **Icons:** :contentReference[oaicite:5]{index=5}  
+- **Fonts:** :contentReference[oaicite:6]{index=6}  
+- **Analytics (optional):** :contentReference[oaicite:7]{index=7}  
+- **Runtime:** :contentReference[oaicite:8]{index=8} 18+ / 20+
 
-- **Frontend**: Next.js 15, React, TypeScript, Tailwind CSS
-- **UI Components**: Radix UI primitives with custom styling
-- **AI Integration**: Mock AI responses (ready for real AI API integration)
-- **Styling**: Custom design system with semantic color tokens
-- **Deployment**: Vercel-ready configuration
+---
 
-## Getting Started
+## 📁 Project Structure
+```bash
+/ (repo root)
+├─ app/ # App Router pages + layouts
+│ ├─ page.tsx # Main UI (tabs: upload, summary, chat, compare)
+│ └─ layout.tsx # Global layout + fonts + metadata
+├─ components/
+│ ├─ ui/ # Reusable UI primitives (button, card, modal, etc.)
+│ ├─ document-upload.tsx
+│ ├─ document-summary.tsx
+│ ├─ chat-interface.tsx
+│ └─ document-comparison.tsx
+├─ lib/ # Utility functions (dropzone, translation helpers)
+├─ scripts/ # Helper scripts (create sample docs)
+├─ public/ # Static assets
+├─ styles/ or app/globals.css
+├─ package.json
+└─ README.md
 
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn
 
-### Installation
+yaml
+Copy code
+```
+---
 
-1. Clone the repository:
-\`\`\`bash
-git clone <repository-url>
-cd nyaaysaar-mvp
-\`\`\`
+## 🚀 Quick Start
 
-2. Install dependencies:
-\`\`\`bash
+**Prerequisites:** :contentReference[oaicite:9]{index=9} 18+ and npm / pnpm / yarn
+
+```bash
+# 1. Clone the repo
+git clone <repo-url>
+cd <repo-folder>
+
+# 2. Install dependencies
 npm install
-\`\`\`
+# or: pnpm install / yarn install
 
-3. Run the development server:
-\`\`\`bash
+# 3. Run in development
 npm run dev
-\`\`\`
+# → open http://localhost:3000
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## Project Structure
-
-\`\`\`
-├── app/                    # Next.js app directory
-│   ├── globals.css        # Global styles with design tokens
-│   ├── layout.tsx         # Root layout component
-│   └── page.tsx           # Main application page
-├── components/            # React components
-│   ├── ui/               # Reusable UI components
-│   ├── document-upload.tsx
-│   ├── document-summary.tsx
-│   ├── chat-interface.tsx
-│   ├── document-comparison.tsx
-│   └── language-toggle.tsx
-├── lib/                   # Utility functions
-│   ├── translations.ts    # Multilingual support
-│   ├── utils.ts          # Common utilities
-│   └── dropzone.ts       # File upload utilities
-└── scripts/              # Utility scripts
-    └── create-sample-documents.js
-\`\`\`
-
-## Key Components
-
-### DocumentUpload
-Handles file uploads with drag-and-drop support, progress tracking, and mock AI processing simulation.
-
-### DocumentSummary  
-Displays AI-generated summaries with interactive risk highlighting and detailed explanations.
-
-### ChatInterface
-Conversational Q&A interface with contextual responses and sample questions.
-
-### DocumentComparison
-Side-by-side document comparison with intelligent recommendations.
-
-### Multilingual System
-Complete translation system supporting English and Hindi with easy extensibility.
-
-## Demo Flow
-
-1. **Upload Document**: Drag and drop a legal document or use sample documents
-2. **View Summary**: See AI-generated plain language summary with risk highlights
-3. **Ask Questions**: Use the chat interface to ask specific questions about clauses
-4. **Compare Documents**: Upload multiple documents to compare terms and risks
-5. **Switch Languages**: Toggle between English and Hindi for full localization
-
-## Customization
-
-### Adding New Languages
-1. Add translations to `lib/translations.ts`
-2. Update the `Language` type
-3. Add language option to `LanguageToggle` component
-
-### Integrating Real AI APIs
-Replace mock functions in components with actual API calls to:
-- OpenAI/GPT for summarization and Q&A
-- Google Document AI for OCR
-- Google Translate API for multilingual support
-
-### Styling Customization
-Modify design tokens in `app/globals.css` to change:
-- Color scheme
-- Typography
-- Spacing and sizing
-- Component styling
-
-## Production Deployment
-
-The application is ready for deployment on Vercel:
-
-1. Push code to GitHub
-2. Connect repository to Vercel
-3. Deploy with default settings
-
-For other platforms, build the application:
-\`\`\`bash
+# 4. Build for production
 npm run build
 npm start
-\`\`\`
+```
 
-## Contributing
+## 💡 The app ships with mock/sample data and logic.
+Upload your own files from the UI or edit scripts/create-sample-documents.js to add test documents.
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+## ⚙️ How It Works
+Upload: components/document-upload.tsx handles file selection + mock processing.
 
-## License
+Summaries & Risk Flags: components/document-summary.tsx shows mock AI output.
 
-This project is built for educational and demonstration purposes. Please ensure compliance with relevant legal and privacy regulations when handling real legal documents.
+Chat Interface: components/chat-interface.tsx gives conversational Q&A on doc context.
 
-## Support
+Compare: components/document-comparison.tsx aligns similar clauses from two docs.
 
-For questions or support, please open an issue in the repository or contact the development team.
+Translation: lib/translate.ts toggles English ↔ Hindi content.
+
+## 🧩 Replacing Mock Logic with Real AI
+Want production-ready behavior? Swap mocks for your real backend:
+
+Integrate OpenAI, Anthropic, or other LLM APIs in the summary/chat modules.
+
+Add a Pinecone / Weaviate vector store for document retrieval.
+
+Store and process uploaded files via an API route (/api/upload).
+
+Secure API keys using .env.local.
+
+## 🧪 Scripts & Utilities
+scripts/create-sample-documents.js → creates sample contracts for UI testing
+
+lib/dropzone.ts → drag & drop helper
+
+lib/translate.ts → basic translation stub
+
+## 🎨 UI & Design
+Responsive layout built with Tailwind CSS
+
+Modular reusable UI components in components/ui/
+
+Icons from lucide-react
+
+Clean typography with Geist font
+
+## 🛠 Troubleshooting
+Make sure Node 18+ is installed.
+
+If npm run dev fails, delete node_modules and reinstall.
+
+Ensure you are using the App Router (app/ directory), not the older pages/ one.
+
+## 🤝 Contributing
+Pull requests are welcome!
+Please open an issue to discuss major changes before submitting.
+
+## 📜 License
+This project is licensed under the MIT License — feel free to use, modify, and shar
